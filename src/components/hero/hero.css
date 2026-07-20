@@ -1,0 +1,166 @@
+/*LEFT SECTION*/
+
+.hero {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.hSection{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+}
+
+
+.hTitle{
+    margin-top: 50px;
+    font-size: 100px;
+    color: #D8CAC2;
+}
+
+.awards{
+    width:30%;
+}
+
+
+.awards p{
+    font-size: 14px;
+    color: #D8CAC2;
+    margin: 16px 0px;
+}
+
+.awardList {
+    display: flex;
+    gap: 8px;
+}
+
+.awardList img {
+    width:  50px;
+    height: 50px;
+    padding: 8px;
+    object-fit: contain;
+    background-color: #D8CAC2;
+    border-radius: 100%
+}
+
+.scroll {
+    margin-bottom: 50px;
+    width: max-content;
+}
+
+/*RIGHT SECTION*/
+.hSection.right{
+    align-items: end;
+}
+
+.follow{
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #785A47; 
+    border-bottom-right-radius: 10px;
+
+}
+
+.follow img {
+    width: 20px;
+    height: 20px;
+}
+
+.followTextContainer {
+    width: 20px;
+    height: 20px;
+}
+
+.followText{
+    background-color: #423126;
+    font-size: 12px;
+    rotate: 90deg;
+    width: max-content;
+    height: 100%;
+    transform-origin: left top;
+    transform: translateY(-20px);
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+}
+
+.bubbleContainer {
+    width: 50%;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.bubble {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    color: #555;
+    padding: 24px;
+    font-size: 18px;
+    border-radius: 20px 20px 0px 20px;
+}
+
+.bubbleContainer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    background-color: red; 
+}
+
+.certificate{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 300;
+    color: #D8CAC2;
+
+}
+
+.certificate img {
+    width: 70px;
+    height: 70px;
+}
+
+.contactLink {
+    margin-bottom: 50px;
+}
+
+.contactButton {
+    position: relative;
+}
+
+.circleText {
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.arrow {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right:0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+
+
+}
