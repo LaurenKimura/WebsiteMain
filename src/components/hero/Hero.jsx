@@ -1,36 +1,12 @@
 import "./hero.css";
 import Speech from "./Speech"
-import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const Hero = () => {
-    /*THIS MAKES FACE PHOTO MOVE*/
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const rotateX = useTransform(y, [-100, 100], [15, -15]);
-    const rotateY = useTransform(x, [-100, 100], [-15, 15]);
-
-    function handleMouseMove(e) {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left - rect.width / 2;
-        const offsetY = e.clientY - rect.top - rect.height / 2;
-        x.set(offsetX);
-        y.set(offsetY);
-    }
-
-    function handleMouseLeave() {
-        x.set(0);
-        y.set(0);
-    }
-
-
     return ( <div className ="hero">
         <div className="hSection left">
             {/*TITLE*/}
             <h1 className="hTitle">
-                Hey There,
-                <br/>
-                <span>I'm Lauren!</span>
+                <span>I'm Lauren Kimura</span>
             </h1>
             {/*TITLE*/}
             <div className ="awards">
@@ -71,14 +47,14 @@ const Hero = () => {
         <div className="hSection right">
             {/*FOLLOW*/}
             <div className= "follow">
-                <a href="/">
-                    <img src="/instagram.png" alt=""/>
+                <a href="/" className="socialLink" data-tooltip="GitHub">
+                    <img src="/github.png" alt=""/>
                 </a>
-                <a href="/">
-                    <img src="/facebook.png" alt=""/>
+                <a href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
+                    <img src="/linkedin.png" alt=""/>
                 </a>
-                <a href="/">
-                    <img src="/youtube.png" alt=""/>
+                <a href="/" className="socialLink" data-tooltip="Resume">
+                    <img src="/resume.png" alt=""/>
                 </a>
                 <div className= "followTextContainer">
                     <div className= "followText"> FOLLOW ME
@@ -87,15 +63,7 @@ const Hero = () => {
             </div>
             {/* BUBBLE */}
             <Speech/>
-            {/*CERIFICATE*/} {/*DONT NEEED! Big image + dont actually have*/}
-            <div className = "certificate">
-                <img src = "/certificate.png" alt=""/>
-                LMA CERTIFIED
-                <br/>
-                PROFESSIONAL
-                <br/>
-                UI Designer
-            </div>
+            
             {/*CONTACT BUTTON*/}
             <a href="/#contact" className="contactLink">
                 <div className="contactButton">
@@ -133,23 +101,11 @@ const Hero = () => {
                  
             </a>
         </div>
-
-        {/*FACE PHOTO*/} 
         <div className="bg">
             {/*3D image*/}
-            <motion.div
-                className="hImg"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                    rotateX,
-                    rotateY,
-                    transformPerspective: 800,
-                }}
-                transition={{ type: "spring", stiffness: 150, damping: 15 }}
-            >
-                <img src="/face.png" alt="" />
-            </motion.div>
+            <div className="hImg">
+                <img src="/face.png" alt=""/>
+            </div>
         </div>
     </div>
     )
