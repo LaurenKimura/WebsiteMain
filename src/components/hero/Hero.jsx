@@ -133,7 +133,6 @@ const Hero = () => {
                  
             </a>
         </div>
-<<<<<<< HEAD
 
         {/*FACE PHOTO*/} 
         <div className="bg">
@@ -152,8 +151,6 @@ const Hero = () => {
                 <img src="/face.png" alt="" />
             </motion.div>
         </div>
-=======
->>>>>>> parent of 84ca856 (Made everything applicable to me for hero page)
     </div>
     )
 }
