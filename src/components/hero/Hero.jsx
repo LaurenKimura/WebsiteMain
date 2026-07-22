@@ -1,26 +1,80 @@
 import "./hero.css";
 import Speech from "./Speech"
+import {motion} from "motion/react"
+
+const awardVariants = {
+    initial: {
+        x: -100,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.2,
+        }
+    },
+        
+};
+
+const followVariants = {
+    initial: {
+        x: -50,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 15,
+            staggerChildren: 0.2,
+        }
+    },
+    hover: {
+        y: -10,
+        transition: { type: "spring", stiffness: 300, damping: 10 }
+    },
+};
 
 const Hero = () => {
     return ( <div className ="hero">
         <div className="hSection left">
             {/*TITLE*/}
-            <h1 className="hTitle">
+            <motion.h1 
+                initial={{y:-100, opacity:0}}
+                animate={{y:0, opacity:1}}
+                className="hTitle">
                 <span>I'm Lauren Kimura</span>
-            </h1>
-            {/*TITLE*/}
-            <div className ="awards">
-                <h2>Computer Science Engineer</h2>
-                <p>Sophmore Student at Santa Clara University</p>
-                <div className="awardList"> 
-                    <img src = "/skateboard.png" alt=""/>
-                    <img src = "/basketball.png" alt=""/>
-                    <img src = "/running.png" alt=""/>
-                    <img src = "/guitar.png" alt=""/>
-                </div>
-            </div>
+            </motion.h1>
+            {/*Awards*/}
+            <motion.div 
+                variants={awardVariants} 
+                initial="initial"
+                animate="animate"
+                className ="awards">
+                <motion.h2 varients={awardVariants}>Computer Science Engineer</motion.h2>
+                <motion.p varients={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
+                <motion.div varients={awardVariants}  className="awardList"> 
+                    <motion.img varients={awardVariants}  src = "/skateboard.png" alt=""/>
+                    <motion.img varients={awardVariants}  src = "/basketball.png" alt=""/>
+                    <motion.img varients={awardVariants}  src = "/running.png" alt=""/>
+                    <motion.img varients={awardVariants}  src = "/guitar.png" alt=""/>
+                </motion.div>
+            </motion.div>
             {/*SCROLL SVG (google it, copied and pasted)*/}
-            <a href ="#service">
+            <motion.a 
+                animate={{y: [0,5], opacity: [0,1,0]}} 
+                transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    ease: "easeInOut",
+                }}
+                href ="#service"
+                className="scroll"
+            >
                 <svg
                     width="50px"
                     height="50px"
@@ -30,37 +84,47 @@ const Hero = () => {
                 >
                     <path
                         d="M5 9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9Z"
-                        stroke="white"
+                        stroke="#393736"
                         strokeWidth="1"
                     />
 
-                    <path
+                    <motion.path
+                        animate={{ y: [0,5]}}
+                        transition = {{
+                            repeat: Infinity,
+                            duration: 4,
+                            ease: "easeInOut",
+                        }}
                         d="M12 5V8"
-                        stroke="white"
+                        stroke="#393736"
                         strokeWidth="1"
                         strokeLinecap="round"
                     />
                 </svg>
-            </a>
+            </motion.a>
         </div>
 
         <div className="hSection right">
             {/*FOLLOW*/}
-            <div className= "follow">
-                <a href="/" className="socialLink" data-tooltip="GitHub">
+            <motion.div variants={followVariants} 
+            initial="initial"
+            animate="animate"
+            className= "follow"
+            >
+                <motion.a  variants={followVariants}  whileHover="hover" href="https://github.com/LaurenKimura" className="socialLink" data-tooltip="GitHub">
                     <img src="/github.png" alt=""/>
-                </a>
-                <a href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
+                </motion.a>
+                <motion.a variants={followVariants} whileHover="hover" href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
                     <img src="/linkedin.png" alt=""/>
-                </a>
-                <a href="/" className="socialLink" data-tooltip="Resume">
+                </motion.a>
+                <motion.a variants={followVariants} whileHover="hover" href="/" className="socialLink" data-tooltip="Resume">
                     <img src="/resume.png" alt=""/>
-                </a>
-                <div className= "followTextContainer">
+                </motion.a>
+                <motion.div variants={followVariants} className= "followTextContainer">
                     <div className= "followText"> FOLLOW ME
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
             {/* BUBBLE */}
             <Speech/>
             
@@ -90,7 +154,7 @@ const Hero = () => {
                             width="50"
                             height="50"
                             fill="none"
-                            stroke="black"
+                            stroke="#393736"
                             strokeWidth="2"
                         >
                         <line x1="6" y1="18" x2="18" y2="6" />
