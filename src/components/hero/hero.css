@@ -1,7 +1,4 @@
 /*LEFT SECTION*/
-.hSection.left {
-    flex:8;
-}
 
 .hero {
     height: 100%;
@@ -9,6 +6,7 @@
     display: flex;
 }
 
+<<<<<<< HEAD
 .bg {
     position: absolute;
     width: 100%;
@@ -40,21 +38,23 @@
 
 }
 
+=======
+>>>>>>> parent of 84ca856 (Made everything applicable to me for hero page)
 .hSection{
-    width:  50%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex:1;
+    
+
 }
 
 
 .hTitle{
     margin-top: 50px;
     font-size: 100px;
-    color: #393736;
-    z-index: 2;
+    color: #D8CAC2;
 }
 
 .awards{
@@ -64,7 +64,7 @@
 
 .awards p{
     font-size: 14px;
-    color: #393736;
+    color: #D8CAC2;
     margin: 16px 0px;
 }
 
@@ -78,7 +78,7 @@
     height: 50px;
     padding: 8px;
     object-fit: contain;
-    background-color: #ffffff;
+    background-color: #D8CAC2;
     border-radius: 100%
 }
 
@@ -90,7 +90,6 @@
 /*RIGHT SECTION*/
 .hSection.right{
     align-items: end;
-    flex: 2;
 }
 
 .follow{
@@ -98,7 +97,7 @@
     flex-direction:column;
     gap: 12px;
     padding: 15px;
-    background-color: #393736; 
+    background-color: #785A47; 
     border-bottom-right-radius: 10px;
 
 }
@@ -106,7 +105,6 @@
 .follow img {
     width: 20px;
     height: 20px;
-    
 }
 
 .followTextContainer {
@@ -115,7 +113,7 @@
 }
 
 .followText{
-    background-color: #bebab8;
+    background-color: #423126;
     font-size: 12px;
     rotate: 90deg;
     width: max-content;
@@ -128,32 +126,6 @@
     border-bottom-right-radius: 10px;
 }
 
-.socialLink {
-    position: relative;
-}
-
-.socialLink::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 10px;
-    background-color: #393736;
-    color: white;
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-}
-
-.socialLink:hover::after {
-    opacity: 1;
-}
-/* 
 .bubbleContainer {
     width: 50%;
     display: flex;
@@ -178,10 +150,7 @@
     border-radius: 100%;
     object-fit: cover;
     background-color: red; 
-} */
-
-
-
+}
 
 .certificate{
     width: 60%;

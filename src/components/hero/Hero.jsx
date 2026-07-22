@@ -28,7 +28,9 @@ const Hero = () => {
         <div className="hSection left">
             {/*TITLE*/}
             <h1 className="hTitle">
-                <span>I'm Lauren Kimura</span>
+                Hey There,
+                <br/>
+                <span>I'm Lauren!</span>
             </h1>
             {/*TITLE*/}
             <div className ="awards">
@@ -69,14 +71,14 @@ const Hero = () => {
         <div className="hSection right">
             {/*FOLLOW*/}
             <div className= "follow">
-                <a href="/" className="socialLink" data-tooltip="GitHub">
-                    <img src="/github.png" alt=""/>
+                <a href="/">
+                    <img src="/instagram.png" alt=""/>
                 </a>
-                <a href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
-                    <img src="/linkedin.png" alt=""/>
+                <a href="/">
+                    <img src="/facebook.png" alt=""/>
                 </a>
-                <a href="/" className="socialLink" data-tooltip="Resume">
-                    <img src="/resume.png" alt=""/>
+                <a href="/">
+                    <img src="/youtube.png" alt=""/>
                 </a>
                 <div className= "followTextContainer">
                     <div className= "followText"> FOLLOW ME
@@ -85,7 +87,15 @@ const Hero = () => {
             </div>
             {/* BUBBLE */}
             <Speech/>
-            
+            {/*CERIFICATE*/} {/*DONT NEEED! Big image + dont actually have*/}
+            <div className = "certificate">
+                <img src = "/certificate.png" alt=""/>
+                LMA CERTIFIED
+                <br/>
+                PROFESSIONAL
+                <br/>
+                UI Designer
+            </div>
             {/*CONTACT BUTTON*/}
             <a href="/#contact" className="contactLink">
                 <div className="contactButton">
@@ -123,6 +133,7 @@ const Hero = () => {
                  
             </a>
         </div>
+<<<<<<< HEAD
 
         {/*FACE PHOTO*/} 
         <div className="bg">
@@ -141,6 +152,8 @@ const Hero = () => {
                 <img src="/face.png" alt="" />
             </motion.div>
         </div>
+=======
+>>>>>>> parent of 84ca856 (Made everything applicable to me for hero page)
     </div>
     )
 }
