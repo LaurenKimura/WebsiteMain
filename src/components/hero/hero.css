@@ -16,7 +16,7 @@
     top: 0;
     left:0;
     z-index: 1;
-    pointer-events:none;
+    perspective: 800px;
 
 }
 
@@ -28,6 +28,7 @@
     margin: auto;
     height: 80%;
     width: max-content;
+    transform-style: preserve-3d;
   
 }
 

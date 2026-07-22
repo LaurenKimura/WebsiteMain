@@ -1,7 +1,29 @@
 import "./hero.css";
 import Speech from "./Speech"
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const Hero = () => {
+    /*THIS MAKES FACE PHOTO MOVE*/
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const rotateX = useTransform(y, [-100, 100], [15, -15]);
+    const rotateY = useTransform(x, [-100, 100], [-15, 15]);
+
+    function handleMouseMove(e) {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left - rect.width / 2;
+        const offsetY = e.clientY - rect.top - rect.height / 2;
+        x.set(offsetX);
+        y.set(offsetY);
+    }
+
+    function handleMouseLeave() {
+        x.set(0);
+        y.set(0);
+    }
+
+
     return ( <div className ="hero">
         <div className="hSection left">
             {/*TITLE*/}
@@ -101,11 +123,23 @@ const Hero = () => {
                  
             </a>
         </div>
+
+        {/*FACE PHOTO*/} 
         <div className="bg">
             {/*3D image*/}
-            <div className="hImg">
-                <img src="/face.png" alt=""/>
-            </div>
+            <motion.div
+                className="hImg"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                    rotateX,
+                    rotateY,
+                    transformPerspective: 800,
+                }}
+                transition={{ type: "spring", stiffness: 150, damping: 15 }}
+            >
+                <img src="/face.png" alt="" />
+            </motion.div>
         </div>
     </div>
     )
