@@ -1,5 +1,5 @@
 import {Canvas} from "@react-three/fiber"
-import "./hero.css";
+import "./home.css";
 import Speech from "./Speech"
 import {motion} from "motion/react"
 import Shape from "./Shape";
@@ -42,8 +42,8 @@ const followVariants = {
     },
 };
 
-const Hero = () => {
-    return ( <div className ="hero">
+const Home = () => {
+    return ( <div className ="home">
         <div className="hSection left">
             {/*TITLE*/}
             <motion.h1 
@@ -183,4 +183,4 @@ const Hero = () => {
     )
 }
 
-export default Hero 
+export default Home 

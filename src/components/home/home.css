@@ -3,11 +3,10 @@
     flex:8;
 }
 
-.hero {
+.home {
     height: 100%;
     overflow: hidden;
     display: flex;
-    position: relative;
 }
  
 .bg {
@@ -271,7 +270,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .home {
     flex-direction: column;
   }
 

@@ -1,6 +1,6 @@
-import Hero from "./components/hero/Hero";
+import Hero from "./components/home/Home";
 import Services from "./components/services/Services";
-import Portfolio from "./components/portfolio/Portfolio";
+import Portfolio from "./components/about/Portfolio";
 import Contact from "./components/contact/Contact";
 import Test3d from "./components/Test3d";
 
