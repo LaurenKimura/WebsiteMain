@@ -92,14 +92,10 @@ section:nth-child(4) { /*Sets the color of the backgrund each section*/
 }
 
 @media (max-width: 768px) {
-    html {
-        scroll-snap-type: none;
-    }
 
     section {
         height: auto;
         min-height: 100vh;
         min-height: 100dvh;
-        scroll-snap-align: unset;
     }
 }
