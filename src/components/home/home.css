@@ -4,6 +4,7 @@
 }
 
 .home {
+    position: relative;
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -16,7 +17,11 @@
     top: 0;
     left:0;
     z-index: 0;
-    pointer-events:auto;
+    pointer-events: none;
+}
+
+.bg canvas {
+    pointer-events: none;
 }
 
 
@@ -53,6 +58,7 @@
     font-size: 100px;
     color: #393736;
     z-index: 2;
+    line-height: 1.1;
 }
 
 .awards{
@@ -128,6 +134,9 @@
 
 .socialLink {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .socialLink::after {
@@ -272,41 +281,165 @@
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
   }
 
   .bg {
-    height: 60%;
+    height: 38%;
+  }
+
+  .hImg {
+    width: 100%;
+    max-width: 220px;
   }
 
   .hSection {
     width: 100%;
+    height: auto;
+    flex: 0 0 auto;
   }
 
   .hSection.left {
     align-items: center;
     text-align: center;
-    gap: 36px;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-top: 24px;
   }
 
   .hTitle {
-    font-size: 48px;
+    margin-top: 0;
+    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
   }
 
   .awards {
     width: 100%;
   }
 
+  .awards p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 28ch;
+  }
+
   .awardList {
     justify-content: center;
   }
 
-  .hSection.right {
-    justify-content: end;
+  .scroll {
+    position: absolute;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    z-index: 2;
   }
 
-  .follow,
+  .hSection.right {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 16px 0 max(72px, calc(env(safe-area-inset-bottom) + 56px));
+  }
+
+  .follow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 8px 18px;
+    gap: 8px;
+  }
+
+  .followTextContainer,
   .bubbleContainer,
   .certificate {
     display: none;
+  }
+
+  .socialLink {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .socialLink::after {
+    display: none;
+  }
+
+  .contactLink {
+    margin-bottom: 0;
+  }
+
+  .contactButton > svg {
+    width: 110px;
+    height: 110px;
+  }
+
+  .circleText {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+
+  .arrow {
+    width: 56px;
+    height: 56px;
+  }
+
+  .arrow svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hTitle {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+
+  .awards h2 {
+    font-size: 1.05rem;
+  }
+
+  .awardList img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .bg {
+    height: 34%;
+  }
+
+  .contactButton > svg {
+    width: 88px;
+    height: 88px;
+  }
+
+  .circleText {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 500px) {
+  .hSection.left {
+    padding-top: 8px;
+    gap: 8px;
+  }
+
+  .bg {
+    height: 28%;
+  }
+
+  .contactButton > svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  .hSection.right {
+    padding-bottom: 48px;
   }
 }

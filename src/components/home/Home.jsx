@@ -75,7 +75,7 @@ const Home = () => {
                     duration: 4,
                     ease: "easeInOut",
                 }}
-                href ="#service"
+                href ="#services"
                 className="scroll"
             >
                 <svg
@@ -170,7 +170,7 @@ const Home = () => {
         </div>
         <div className="bg">
             {/*3D image*/}
-            <Canvas>
+            <Canvas dpr={[1, 1.5]}>
                 <Suspense fallback="loading...">
                     <Shape />
                 </Suspense>

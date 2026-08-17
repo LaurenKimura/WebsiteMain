@@ -1,5 +1,16 @@
 .services {
     height: 100%;
+    min-height: inherit;
     overflow: hidden;
     display: flex;
+}
+
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+    }
+
+    .sSection {
+        width: 100%;
+    }
 }
