@@ -14,7 +14,7 @@ const Shape = () => {
 
   return (
     <>
-      <Sphere args={isMobile ? [1, 32, 64] : [1, 100, 200]} scale={isMobile ? 1.7 : 2.4}>
+      <Sphere args={isMobile ? [1, 32, 64] : [1, 100, 200]} scale={2.4}>
         <MeshDistortMaterial
           color="#C1AdA0"
           attach="material"

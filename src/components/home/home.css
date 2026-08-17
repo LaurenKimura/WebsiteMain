@@ -289,7 +289,7 @@
   }
 
   .bg {
-    height: 38%;
+    height: 50%;
   }
 
   .hImg {
@@ -343,7 +343,10 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    padding: 16px 0 max(72px, calc(env(safe-area-inset-bottom) + 56px));
+    padding: 16px 0 1000px;
+    .contactButton {
+      display: none;
+    }
   }
 
   .follow {
