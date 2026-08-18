@@ -58,13 +58,13 @@ const Home = () => {
                 initial="initial"
                 animate="animate"
                 className ="awards">
-                <motion.h2 varients={awardVariants}>Computer Science Engineer</motion.h2>
-                <motion.p varients={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
-                <motion.div varients={awardVariants}  className="awardList"> 
-                    <motion.img varients={awardVariants}  src = "/skateboard.png" alt=""/>
-                    <motion.img varients={awardVariants}  src = "/basketball.png" alt=""/>
-                    <motion.img varients={awardVariants}  src = "/running.png" alt=""/>
-                    <motion.img varients={awardVariants}  src = "/guitar.png" alt=""/>
+                <motion.h2 variants={awardVariants}>Computer Science Engineer</motion.h2>
+                <motion.p variants={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
+                <motion.div variants={awardVariants}  className="awardList"> 
+                    <motion.img variants={awardVariants}  src = "/skateboard.png" alt=""/>
+                    <motion.img variants={awardVariants}  src = "/basketball.png" alt=""/>
+                    <motion.img variants={awardVariants}  src = "/running.png" alt=""/>
+                    <motion.img variants={awardVariants}  src = "/guitar.png" alt=""/>
                 </motion.div>
             </motion.div>
             {/*SCROLL SVG (google it, copied and pasted)*/}
@@ -75,7 +75,7 @@ const Home = () => {
                     duration: 4,
                     ease: "easeInOut",
                 }}
-                href ="#services"
+                href ="#video"
                 className="scroll"
             >
                 <svg

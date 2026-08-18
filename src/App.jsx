@@ -1,9 +1,7 @@
 import Hero from "./components/home/Home";
-import Services from "./components/services/Services";
+import Video from "./components/video/Video";
 import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
-import Test3d from "./components/Test3d";
-
 
 const App = () => {
   return (
@@ -11,8 +9,8 @@ const App = () => {
       <section id="home">
         <Hero />
       </section>
-      <section id="services">
-        <Services />
+      <section id="video">
+        <Video />
       </section>
       {/* <section id="portfolio"> */}
         <Portfolio />

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect} from "react";
 import "./portfolio.css";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 
 const items = [
   {
