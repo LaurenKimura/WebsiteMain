@@ -1,6 +1,6 @@
 import Hero from "./components/home/Home";
 import Services from "./components/services/Services";
-import Portfolio from "./components/about/Portfolio";
+import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
 import Test3d from "./components/Test3d";
 
@@ -9,19 +9,16 @@ const App = () => {
   return (
     <div className="container">
       <section id="home">
-      <Hero />
+        <Hero />
       </section>
-
       <section id="services">
-      <Services />
+        <Services />
       </section>
-
-      <section id="portfolio">
-      <Portfolio />
-      </section>
-
+      {/* <section id="portfolio"> */}
+        <Portfolio />
+      {/* </section> */}
       <section id="contact">
-      <Contact />
+        <Contact />
       </section>
       
     </div>
