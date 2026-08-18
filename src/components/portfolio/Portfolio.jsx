@@ -24,20 +24,20 @@ const items = [
     desc: "An app connecting young volunteers with local elders for yard work, tech support, errands, or companionship—reducing elder loneliness while volunteers gain mentorship. Built with React 19, React Router, and Vite; AWS Amplify Gen 2 (Cognito, AppSync, DynamoDB) on the backend.",
     link: "/",
   },
-  {
-    id: 4,
-    img: "/p4.jpg",
-    title: "Social Media Project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 5,
-    img: "/p5.jpg",
-    title: "Animated Portfolio Website",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
+//   {
+//     id: 4,
+//     img: "/p4.jpg",
+//     title: "Social Media Project",
+//     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+//     link: "https://devpost.com/software/opendoor-obf9m7",
+//   },
+//   {
+//     id: 5,
+//     img: "/p5.jpg",
+//     title: "Animated Portfolio Website",
+//     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+//     link: "/",
+//   },
 ];
 
 const imgVariants = {
@@ -141,7 +141,10 @@ const Portfolio = () => {
             <section/>
             <section/>
             <section/>
-            <section/>
+            {/* <section/>
+            <section/> 
+            IF I ADD EXTRA PROJECTS UNSLASH THESE
+            */}
         </div>
     )
 }

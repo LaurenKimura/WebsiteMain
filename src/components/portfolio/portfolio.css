@@ -1,5 +1,8 @@
 .portfolio {
-    height: 600vh;
+    height: 400vh;
+    /* height: 600vh;
+    IF 5 LINKS = 600vh
+    */
     position: relative;
 }
 
@@ -29,14 +32,14 @@
   background: linear-gradient(to right, #e1dbd8, #bcb3ae);
 }
 .pItem:nth-child(3) {
-  background: linear-gradient(to right, #bcb3ae, #99918d);
+  background: linear-gradient(to right, #bcb3ae, #e1dbd8);
 }
-.pItem:nth-child(4) {
+/* .pItem:nth-child(4) {
   background: linear-gradient(to right, #99918d, #bcb3ae);
 }
 .pItem:nth-child(5) {
   background: linear-gradient(to right, #bcb3ae, #e1dbd8);
-}
+} */
 
 .pImg{
     width: 40%;
@@ -66,7 +69,7 @@
 }
 
 .pText button{
-    background-color: pink;
+    background-color: #785A47;
     padding: 12px;
     border-radius: 10px;
     border: none;
