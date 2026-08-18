@@ -23,19 +23,19 @@
 }
 
 .pItem:nth-child(1) {
-  background: linear-gradient(to right, #12071f, #210b3a);
+  background: linear-gradient(to right, #e1dbd8, #e1dbd8);
 }
 .pItem:nth-child(2) {
-  background: linear-gradient(to right, #210b3a, #27084a);
+  background: linear-gradient(to right, #e1dbd8, #e3c4b5);
 }
 .pItem:nth-child(3) {
-  background: linear-gradient(to right, #27084a, #220345);
+  background: linear-gradient(to right, #e3c4b5, #e0ad94);
 }
 .pItem:nth-child(4) {
-  background: linear-gradient(to right, #220345, #2a0159);
+  background: linear-gradient(to right, #e0ad94, #dfc9be);
 }
 .pItem:nth-child(5) {
-  background: linear-gradient(to right, #2a0159, #12071f);
+  background: linear-gradient(to right, #dfc9be, #e1dbd8);
 }
 
 .pImg{

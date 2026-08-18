@@ -130,7 +130,7 @@ const Portfolio = () => {
                 className= "empty"
                 style={{
                     width: window.innerWidth - containerDistance, 
-                    backgroundColor: "pink",
+                    backgroundColor: "#e1dbd8",
                 }}
                 />
                 {items.map(item=>(
