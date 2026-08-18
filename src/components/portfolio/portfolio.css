@@ -41,6 +41,13 @@
   background: linear-gradient(to right, #bcb3ae, #e1dbd8);
 } */
 
+.pProgress {
+  position: sticky;
+  width: 80px;
+  height: 80px;
+  left: 0;
+  bottom: 80%;
+}
 .pImg{
     width: 40%;
     border-radius: 20px;
@@ -77,3 +84,37 @@
     cursor: pointer;
 }
 
+@media (max-width: 1536px) {
+  .pItem {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .pText h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pItem {
+    flex-direction: column;
+  }
+
+  .pImg,
+  .pText {
+    width: 80%;
+  }
+
+  .pProgress {
+    bottom: 40px;
+    left: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pProgress {
+    width: 50px;
+    height: 50px;
+  }
+}
