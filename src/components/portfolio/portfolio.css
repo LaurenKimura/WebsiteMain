@@ -26,16 +26,16 @@
   background: linear-gradient(to right, #e1dbd8, #e1dbd8);
 }
 .pItem:nth-child(2) {
-  background: linear-gradient(to right, #e1dbd8, #e3c4b5);
+  background: linear-gradient(to right, #e1dbd8, #bcb3ae);
 }
 .pItem:nth-child(3) {
-  background: linear-gradient(to right, #e3c4b5, #e0ad94);
+  background: linear-gradient(to right, #bcb3ae, #99918d);
 }
 .pItem:nth-child(4) {
-  background: linear-gradient(to right, #e0ad94, #dfc9be);
+  background: linear-gradient(to right, #99918d, #bcb3ae);
 }
 .pItem:nth-child(5) {
-  background: linear-gradient(to right, #dfc9be, #e1dbd8);
+  background: linear-gradient(to right, #bcb3ae, #e1dbd8);
 }
 
 .pImg{
