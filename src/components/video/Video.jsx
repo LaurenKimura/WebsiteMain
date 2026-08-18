@@ -2,13 +2,13 @@ import "./video.css";
 import { useState } from "react";
 
 const VIDEOS = [
-  { id: 1, src: "/video1.mp4", title: "I love nature" },
-  { id: 2, src: "/video2.mp4", title: "I've been playing basketball since 1st grade" },
-  { id: 3, src: "/video3.mp4", title: "I love to hangout with my friends!" },
-  { id: 4, src: "/video4.mp4", title: "One of my hobbies is guitar" },
-  { id: 5, src: "/video5.mp4", title: "If I was not a CS Engineer, I'd be in circus" },
-  { id: 6, src: "/video6.mp4", title: "I love photography and videography" },
-  { id: 7, src: "/video7.mp4", title: "I also try to skateboard" },
+  { id: 1, src: "/video1.mp4", title: "I love touching grass!" },
+  { id: 2, src: "/video2.mp4", title: "In my freetime, I play basketball" },
+  { id: 3, src: "/video3.mp4", title: "or hangout with my friends ❤️" },
+  { id: 4, src: "/video4.mp4", title: "I love to learn new things" },
+  { id: 5, src: "/video5.mp4", title: "For example: Juggling" },
+  { id: 6, src: "/video6.mp4", title: " or videography" },
+  { id: 7, src: "/video7.mp4", title: "and even skateboarding" },
 ];
 
 export default function Video() {
