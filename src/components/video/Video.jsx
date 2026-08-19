@@ -7,8 +7,8 @@ const VIDEOS = [
   { id: 3, src: "/video3.mp4", title: "or hangout with my friends ❤️" },
   { id: 4, src: "/video4.mp4", title: "I love to learn new things" },
   { id: 5, src: "/video5.mp4", title: "For example: Juggling" },
-  { id: 6, src: "/video6.mp4", title: " or videography" },
-  { id: 7, src: "/video7.mp4", title: "and even skateboarding" },
+  { id: 6, src: "/video6.mp4", title: " or solving a rubix cube" },
+  { id: 7, src: "/video7.mp4", title: "and even skateboarding!" },
 ];
 
 export default function Video() {
