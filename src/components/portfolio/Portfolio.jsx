@@ -5,7 +5,7 @@ import { motion, useInView, useScroll, useTransform } from "motion/react";
 const items = [
   {
     id: 1,
-    img: "/p1.jpg",
+    img: "/p1.mp4",
     title: "CardBot",
     desc: "There's always something to celebrate, but not everyone has time to make a sentimental card. CardBot solves this for both businesses producing cards at scale and individuals who want something personal, fast. It uses 3 omni wheels for movement, an Arduino Uno with an Adafruit Motor Shield (I2C) for motor control, quadrature Hall encoders for odometry, and a servo for pen lift/lower.",
 
@@ -88,7 +88,17 @@ const ListItem = ({item})=> {
                 animate = {isInView ? "animate" : "initial"} 
                 className="pImg"
             >
-                <img src={item.img} alt="" />
+                {item.img.endsWith(".mp4") ? (
+                    <video
+                        src={item.img}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                ) : (
+                    <img src={item.img} alt="" />
+                )}
             </motion.div>
             <motion.div 
                 variants={textVariants} 

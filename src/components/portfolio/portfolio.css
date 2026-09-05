@@ -54,10 +54,12 @@
     overflow: hidden;
 }
 
-.pImg img{
+.pImg img,
+.pImg video{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .pText{
