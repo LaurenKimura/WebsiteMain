@@ -72,18 +72,100 @@
     margin: 16px 0px;
 }
 
-.awardList {
-    display: flex;
-    gap: 8px;
+.awards .hobbyLabel {
+    margin: 12px 0 8px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #8a7e76;
 }
 
-.awardList img {
-    width:  50px;
+.hobbyBox {
+    display: inline-block;
+    padding: 12px 14px;
+    border: 1px solid #c5b1a4;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.awardList {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    gap: 8px;
+    width: max-content;
+}
+
+.hobbyBtn {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.hobbyBtn:disabled {
+    cursor: default;
+}
+
+.hobbyBtn img {
+    width: 50px;
     height: 50px;
     padding: 8px;
     object-fit: contain;
     background-color: #ffffff;
-    border-radius: 100%
+    border-radius: 100%;
+    transition: transform 0.2s ease;
+}
+
+.hobbyBtn:hover:not(:disabled) img {
+    transform: translateY(-6px);
+}
+
+.hobbyModal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(57, 55, 54, 0.55);
+}
+
+.hobbyModalCard {
+    position: relative;
+    width: min(720px, 100%);
+    padding: 20px 20px 16px;
+    border-radius: 20px;
+    background: #e1dbd8;
+    box-shadow: 0 16px 40px rgba(57, 55, 54, 0.25);
+}
+
+.hobbyModalClose {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    color: #393736;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hobbyModalVideo {
+    width: 100%;
+    min-height: 280px;
+    max-height: 70vh;
+    border-radius: 12px;
+    background: #393736;
+    object-fit: contain;
+}
+
+.hobbyModalLabel {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 16px;
 }
 
 .scroll {
@@ -289,12 +371,18 @@
   }
 
   .bg {
-    height: 50%;
+    height: 52%;
+    top: auto;
+    bottom: 0;
   }
 
   .hImg {
-    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
     max-width: 220px;
+    height: 100%;
   }
 
   .hSection {
@@ -304,11 +392,12 @@
   }
 
   .hSection.left {
-    align-items: center;
+    align-items: stretch;
     text-align: center;
     justify-content: flex-start;
     gap: 16px;
-    padding-top: 24px;
+    padding: 24px 16px 0;
+    z-index: 2;
   }
 
   .hTitle {
@@ -318,35 +407,59 @@
 
   .awards {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .awards h2,
+  .awards p:not(.hobbyLabel) {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .awards p {
-    margin-left: auto;
-    margin-right: auto;
     max-width: 28ch;
   }
 
+  .awards .hobbyLabel {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .hobbyBox {
+    display: block;
+    width: max-content;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   .awardList {
-    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .scroll {
-    position: absolute;
-    bottom: max(12px, env(safe-area-inset-bottom));
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 0;
-    z-index: 2;
+    display: none;
   }
 
   .hSection.right {
+    position: absolute;
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
     align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
-    padding: 16px 0 1000px;
-    .contactButton {
-      display: none;
-    }
+    justify-content: flex-end;
+    padding: 0;
+    z-index: 3;
   }
 
   .follow {
@@ -360,7 +473,8 @@
 
   .followTextContainer,
   .bubbleContainer,
-  .certificate {
+  .certificate,
+  .contactLink {
     display: none;
   }
 
@@ -371,30 +485,6 @@
 
   .socialLink::after {
     display: none;
-  }
-
-  .contactLink {
-    margin-bottom: 0;
-  }
-
-  .contactButton > svg {
-    width: 110px;
-    height: 110px;
-  }
-
-  .circleText {
-    font-size: 13px;
-    letter-spacing: 1.5px;
-  }
-
-  .arrow {
-    width: 56px;
-    height: 56px;
-  }
-
-  .arrow svg {
-    width: 36px;
-    height: 36px;
   }
 }
 
@@ -407,13 +497,17 @@
     font-size: 1.05rem;
   }
 
-  .awardList img {
+  .hobbyBtn img {
     width: 42px;
     height: 42px;
   }
 
+  .awardList {
+    grid-template-columns: repeat(3, 42px);
+  }
+
   .bg {
-    height: 34%;
+    height: 50%;
   }
 
   .contactButton > svg {
@@ -434,15 +528,10 @@
   }
 
   .bg {
-    height: 28%;
+    height: 36%;
   }
 
-  .contactButton > svg {
-    width: 72px;
-    height: 72px;
-  }
-
-  .hSection.right {
-    padding-bottom: 48px;
+  .hImg {
+    max-width: 180px;
   }
 }

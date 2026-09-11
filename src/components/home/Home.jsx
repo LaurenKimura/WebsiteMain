@@ -3,7 +3,46 @@ import "./home.css";
 import Speech from "./Speech"
 import {motion} from "motion/react"
 import Shape from "./Shape";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
+
+const hobbies = [
+    {
+        id: "skateboard",
+        icon: "/skateboard.png",
+        label: "Skateboarding",
+        video: "/skateboard.mp4",
+    },
+    {
+        id: "basketball",
+        icon: "/basketball.png",
+        label: "Basketball",
+        video: "/basketball.mp4",
+    },
+    {
+        id: "guitar",
+        icon: "/guitar.png",
+        label: "Guitar",
+        video: "/guitar.mp4",
+    },
+    {
+        id: "juggling",
+        icon: "/juggling.png",
+        label: "Juggling",
+        video: "/juggling.mp4",
+    },
+    {
+        id: "rubix",
+        icon: "/rubix.png",
+        label: "Rubik's cube",
+        video: "/rubix.mp4",
+    },
+    {
+        id: "friends",
+        icon: "/friends.png",
+        label: "Friends",
+        video: "/friends.mp4",
+    },
+];
 
 const awardVariants = {
     initial: {
@@ -43,6 +82,19 @@ const followVariants = {
 };
 
 const Home = () => {
+    const [activeHobby, setActiveHobby] = useState(null);
+
+    useEffect(() => {
+        if (!activeHobby) return undefined;
+
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") setActiveHobby(null);
+        };
+
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [activeHobby]);
+
     return ( <div className ="home">
         <div className="hSection left">
             {/*TITLE*/}
@@ -60,11 +112,23 @@ const Home = () => {
                 className ="awards">
                 <motion.h2 variants={awardVariants}>Computer Science Engineer</motion.h2>
                 <motion.p variants={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
-                <motion.div variants={awardVariants}  className="awardList"> 
-                    <motion.img variants={awardVariants}  src = "/skateboard.png" alt=""/>
-                    <motion.img variants={awardVariants}  src = "/basketball.png" alt=""/>
-                    <motion.img variants={awardVariants}  src = "/running.png" alt=""/>
-                    <motion.img variants={awardVariants}  src = "/guitar.png" alt=""/>
+                <motion.p variants={awardVariants} className="hobbyLabel">beyond the code:</motion.p>
+                <motion.div variants={awardVariants} className="hobbyBox">
+                    <div className="awardList"> 
+                    {hobbies.map((hobby) => (
+                        <motion.button
+                            key={hobby.id}
+                            type="button"
+                            variants={awardVariants}
+                            className="hobbyBtn"
+                            onClick={() => hobby.video && setActiveHobby(hobby)}
+                            aria-label={hobby.video ? `Play ${hobby.label} video` : hobby.label}
+                            disabled={!hobby.video}
+                        >
+                            <img src={hobby.icon} alt="" />
+                        </motion.button>
+                    ))}
+                    </div>
                 </motion.div>
             </motion.div>
             {/*SCROLL SVG (google it, copied and pasted)*/}
@@ -179,6 +243,36 @@ const Home = () => {
                 <img src="/face.png" alt=""/>
             </div>
         </div>
+        {activeHobby?.video && (
+            <div
+                className="hobbyModal"
+                onClick={() => setActiveHobby(null)}
+                role="dialog"
+                aria-modal="true"
+                aria-label={activeHobby.label}
+            >
+                <div className="hobbyModalCard" onClick={(event) => event.stopPropagation()}>
+                    <button
+                        type="button"
+                        className="hobbyModalClose"
+                        onClick={() => setActiveHobby(null)}
+                        aria-label="Close video"
+                    >
+                        ×
+                    </button>
+                    <video
+                        key={activeHobby.video}
+                        src={activeHobby.video}
+                        className="hobbyModalVideo"
+                        autoPlay
+                        muted
+                        controls
+                        playsInline
+                    />
+                    <p className="hobbyModalLabel">{activeHobby.label}</p>
+                </div>
+            </div>
+        )}
     </div>
     )
 }
