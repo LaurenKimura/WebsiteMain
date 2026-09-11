@@ -17,7 +17,7 @@
   align-items: center;
   gap: 12px;
   padding: 8px 12px 8px 28px;
-  border-radius: 999px;
+  border-radius: 12px;
   background: #393736;
   border: 1px solid rgba(193, 173, 160, 0.28);
   box-shadow: 0 10px 30px rgba(57, 55, 54, 0.18);
@@ -107,12 +107,12 @@
 .navFollowPanel {
   position: absolute;
   top: 100%;
-  right: -12px;
+  right: -5px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 60px;
+  width: 52px;
   padding: 0;
   overflow: hidden;
   background-color: #393736;
@@ -124,26 +124,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  height: 162px;
-  padding-top: 12px;
+  justify-content: center;
+  gap: 12px;
+  height: auto;
+  padding: 12px 0 14px;
   width: 100%;
 }
 
 .navFollowLink {
   position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 12px auto 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #e1dbd8;
   transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.navFollowLink:last-of-type {
-  margin-bottom: 12px;
 }
 
 .navFollowLink:hover,
@@ -153,8 +150,8 @@
 }
 
 .navFollowLink svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .navFollowLink::after {
@@ -229,7 +226,7 @@
   }
 
   .navFollowPanel {
-    right: -6px;
+    right: -5px;
   }
 
   .navFollowLink::after {
@@ -253,6 +250,6 @@
   }
 
   .navFollowPanel {
-    right: -4px;
+    right: -5px;
   }
 }
