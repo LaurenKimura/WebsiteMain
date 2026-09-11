@@ -74,11 +74,17 @@
     margin: 16px 0px;
 }
 
-.awards .hobbyLabel {
-    margin: 12px 0 8px;
+.hobbyBlock {
+    margin-top: 48px;
+    width: max-content;
+}
+
+.hobbyBlock .hobbyLabel {
+    margin: 0 0 8px;
     font-size: 13px;
     letter-spacing: 0.08em;
     color: #8a7e76;
+    text-align: center;
 }
 
 .hobbyBox {
@@ -422,11 +428,8 @@
     max-width: 28ch;
   }
 
-  .awards .hobbyLabel {
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left;
+  .hobbyBlock {
+    margin-top: 28px;
   }
 
   .hobbyBox {

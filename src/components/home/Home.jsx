@@ -112,8 +112,9 @@ const Home = () => {
                 className ="awards">
                 <motion.h2 variants={awardVariants}>Computer Science Engineer</motion.h2>
                 <motion.p variants={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
-                <motion.p variants={awardVariants} className="hobbyLabel">BEYOND THE CODE:</motion.p>
-                <motion.div variants={awardVariants} className="hobbyBox">
+                <motion.div variants={awardVariants} className="hobbyBlock">
+                    <p className="hobbyLabel">BEYOND THE CODE:</p>
+                    <div className="hobbyBox">
                     <div className="awardList"> 
                     {hobbies.map((hobby) => (
                         <motion.button
@@ -128,6 +129,7 @@ const Home = () => {
                             <img src={hobby.icon} alt="" />
                         </motion.button>
                     ))}
+                    </div>
                     </div>
                 </motion.div>
             </motion.div>
