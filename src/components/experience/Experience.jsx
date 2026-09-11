@@ -5,8 +5,8 @@ import "./experience.css";
 const jobs = [
   {
     id: 1,
-    company: "ACM Workshop Coordinator",
-    role: "Software Engineer Intern",
+    company: "Association for Computing Machinery",
+    role: "Workshop Coordinator",
     dates: "Jun 2026 – Aug 2026",
     logo: "/acm.png",
     logoAlt: "ACM logo",
@@ -17,8 +17,8 @@ const jobs = [
   },
   {
     id: 2,
-    company: "TrackFly",
-    role: "Software Engineer Intern",
+    company: "Association for Computing Machinery",
+    role: "Marketing Coordinator",
     dates: "Sep 2025 – Dec 2025",
     logo: "/acm.png",
     logoAlt: "ACM logo",
@@ -71,10 +71,10 @@ const JobItem = ({ job }) => {
       </div>
       <div className="expBody">
         <div className="expHeading">
-          <h2 className="expCompany">
-            {job.company}
-            <span className="expRole">{job.role}</span>
-          </h2>
+          <div className="expTitleBlock">
+            <h2 className="expCompany">{job.company}</h2>
+            <p className="expRole">{job.role}</p>
+          </div>
           <p className="expDates">{job.dates}</p>
         </div>
         <p className="expDesc">{job.description}</p>
