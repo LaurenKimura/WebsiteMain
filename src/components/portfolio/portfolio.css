@@ -6,9 +6,14 @@
     position: relative;
 }
 
-.pList {
+.pViewport {
     position: sticky;
     top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pList {
     display: flex;
     height: 100vh;
     width: max-content;
@@ -42,11 +47,13 @@
 } */
 
 .pProgress {
-  position: sticky;
+  position: absolute;
   width: 80px;
   height: 80px;
   left: 0;
-  bottom: 80%;
+  top: 20%;
+  pointer-events: none;
+  z-index: 2;
 }
 .pImg{
     width: 40%;
@@ -110,6 +117,7 @@
   }
 
   .pProgress {
+    top: auto;
     bottom: 40px;
     left: 70%;
   }

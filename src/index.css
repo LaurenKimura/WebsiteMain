@@ -61,6 +61,15 @@ section:nth-child(4) { /*Sets the color of the backgrund each section*/
 
 /*differant medias fix the header sizing based on screen size*/
 /*keep in mind for web design these px*/
+@media (max-width: 768px) {
+    #experience {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        scroll-snap-align: start;
+    }
+}
+
 @media (min-width:640px) { 
     .container{
         max-width: 640px;

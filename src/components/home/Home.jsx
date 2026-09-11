@@ -75,7 +75,7 @@ const Home = () => {
                     duration: 4,
                     ease: "easeInOut",
                 }}
-                href ="#video"
+                href ="#experience"
                 className="scroll"
             >
                 <svg

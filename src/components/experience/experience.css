@@ -1,0 +1,179 @@
+.experience {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 8px;
+}
+
+.expHeaderBlock {
+  margin-bottom: 40px;
+}
+
+.expTitle {
+  font-size: clamp(3.2rem, 7vw, 5.4rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: #393736;
+}
+
+.expSubtitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #8a7e76;
+  letter-spacing: 0.02em;
+}
+
+.expSubtitleMark {
+  font-size: 16px;
+}
+
+.expSubtitleArrow {
+  font-size: 13px;
+}
+
+.expList {
+  display: flex;
+  flex-direction: column;
+}
+
+.expItem {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(57, 55, 54, 0.14);
+}
+
+.expItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.expLogo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.expLogoHyve img {
+  border-radius: 4px;
+}
+
+.expHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.expCompany {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.15;
+  color: #393736;
+}
+
+.expRole {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a7e76;
+}
+
+.expDates {
+  flex-shrink: 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a7e76;
+  white-space: nowrap;
+}
+
+.expDesc {
+  margin-top: 12px;
+  max-width: 62ch;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #4f4743;
+}
+
+.expTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  list-style: none;
+}
+
+.expTags li {
+  padding: 5px 12px;
+  border: 1px solid #c5b1a4;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #785a47;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 768px) {
+  .experience {
+    justify-content: flex-start;
+    padding: 28px 4px 40px;
+  }
+
+  .expHeaderBlock {
+    margin-bottom: 20px;
+  }
+
+  .expItem {
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .expLogo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .expHeading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .expRole {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .expDesc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expTitle {
+    font-size: clamp(2.4rem, 14vw, 3.2rem);
+  }
+
+  .expCompany {
+    font-size: 1.35rem;
+  }
+}

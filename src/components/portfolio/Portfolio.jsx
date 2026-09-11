@@ -126,18 +126,42 @@ const Portfolio = () => {
 
     return (
         <div className = "portfolio" ref={ref}>
-            <motion.div className="pList" style={{ x: xTranslate}}>
-                <div 
-                className= "empty"
-                style={{
-                    width: window.innerWidth - containerDistance, 
-                    backgroundColor: "#e1dbd8",
-                }}
-                />
-                {items.map(item=>(
-                    <ListItem item ={item} key={item.id}/>
-                ))}
-            </motion.div>
+            <div className="pViewport">
+                <motion.div className="pList" style={{ x: xTranslate}}>
+                    <div 
+                    className= "empty"
+                    style={{
+                        width: window.innerWidth - containerDistance, 
+                        backgroundColor: "#e1dbd8",
+                    }}
+                    />
+                    {items.map(item=>(
+                        <ListItem item ={item} key={item.id}/>
+                    ))}
+                </motion.div>
+                <div className="pProgress">
+                    <svg width="100%" height="100%" viewBox="0 0 160 160">
+                        <circle
+                        cx="80"
+                        cy="80"
+                        r="70"
+                        fill="none"
+                        stroke="#c5b1a4"
+                        strokeWidth={20}
+                        />
+                        <motion.circle
+                        cx="80"
+                        cy="80"
+                        r="70"
+                        fill="none"
+                        stroke="#785A47"
+                        strokeWidth={20}
+                        style={{ pathLength: scrollYProgress }}
+                        transform="rotate(-90 80 80)"
+                        />
+                    </svg>
+                </div>
+            </div>
             <section/>
             <section/>
             <section/>
@@ -146,28 +170,6 @@ const Portfolio = () => {
             <section/> 
             IF I ADD EXTRA PROJECTS UNSLASH THESE
             */}
-            <div className="pProgress">
-                <svg width="100%" height="100%" viewBox="0 0 160 160">
-                    <circle
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    fill="none"
-                    stroke="#c5b1a4"
-                    strokeWidth={20}
-                    />
-                    <motion.circle
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    fill="none"
-                    stroke="#785A47"
-                    strokeWidth={20}
-                    style={{ pathLength: scrollYProgress }}
-                    transform="rotate(-90 80 80)"
-                    />
-                </svg>
-            </div>
         </div>
     )
 }
