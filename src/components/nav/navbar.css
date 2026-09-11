@@ -134,11 +134,16 @@
   position: relative;
   width: 20px;
   height: 20px;
+  margin: 12px auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #e1dbd8;
   transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navFollowLink:last-of-type {
+  margin-bottom: 12px;
 }
 
 .navFollowLink:hover,
@@ -205,7 +210,7 @@
   }
 
   .navSocialToggle {
-    width: 36px;
+    width: 20px;
     height: 36px;
     gap: 4px;
   }
