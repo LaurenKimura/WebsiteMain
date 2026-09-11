@@ -1,13 +1,13 @@
 .experience {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 48px 8px;
+  justify-content: flex-start;
+  padding: 72px 8px 96px;
 }
 
 .expHeaderBlock {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .expTitle {
@@ -36,22 +36,62 @@
 }
 
 .expList {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.expItem {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 28px;
-  align-items: start;
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(57, 55, 54, 0.14);
+.expTimeline {
+  position: absolute;
+  left: 6px;
+  top: 40px;
+  bottom: 40px;
+  width: 3px;
+  pointer-events: none;
 }
 
-.expItem:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.expTimelineTrack {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #c5b1a4;
+  opacity: 0.45;
+}
+
+.expTimelineFill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #c5b1a4, #785a47);
+  transform-origin: top;
+}
+
+.expItem {
+  display: grid;
+  grid-template-columns: 16px 96px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 36px 0;
+  min-height: 42vh;
+}
+
+.expDot {
+  width: 14px;
+  height: 14px;
+  margin-top: 33px;
+  justify-self: center;
+  border-radius: 50%;
+  border: 2px solid #c5b1a4;
+  background: #e1dbd8;
+  z-index: 1;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.expDot.isActive {
+  border-color: #785a47;
+  background: #785a47;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 5px rgba(120, 90, 71, 0.16);
 }
 
 .expLogo {
@@ -132,18 +172,30 @@
 
 @media (max-width: 768px) {
   .experience {
-    justify-content: flex-start;
-    padding: 28px 4px 40px;
+    padding: 28px 4px 48px;
   }
 
   .expHeaderBlock {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+  }
+
+  .expTimeline {
+    left: 5px;
+    top: 28px;
+    bottom: 28px;
   }
 
   .expItem {
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 14px 56px 1fr;
     gap: 14px;
-    padding: 20px 0;
+    padding: 24px 0;
+    min-height: 0;
+  }
+
+  .expDot {
+    width: 12px;
+    height: 12px;
+    margin-top: 22px;
   }
 
   .expLogo {

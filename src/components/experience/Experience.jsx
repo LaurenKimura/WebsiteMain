@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, useScroll } from "motion/react";
 import "./experience.css";
 
 const jobs = [
@@ -53,9 +53,49 @@ const itemVariants = {
   },
 };
 
+const JobItem = ({ job }) => {
+  const itemRef = useRef(null);
+  const isActive = useInView(itemRef, {
+    margin: "-35% 0px -35% 0px",
+  });
+
+  return (
+    <motion.article
+      className={`expItem${isActive ? " isActive" : ""}`}
+      variants={itemVariants}
+      ref={itemRef}
+    >
+      <span className={`expDot${isActive ? " isActive" : ""}`} aria-hidden="true" />
+      <div className={`expLogo ${job.logoClass}`}>
+        <img src={job.logo} alt={job.logoAlt} />
+      </div>
+      <div className="expBody">
+        <div className="expHeading">
+          <h2 className="expCompany">
+            {job.company}
+            <span className="expRole">{job.role}</span>
+          </h2>
+          <p className="expDates">{job.dates}</p>
+        </div>
+        <p className="expDesc">{job.description}</p>
+        <ul className="expTags">
+          {job.tags.map((tag) => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
+      </div>
+    </motion.article>
+  );
+};
+
 const Experience = () => {
   const ref = useRef(null);
+  const listRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { scrollYProgress } = useScroll({
+    target: listRef,
+    offset: ["start 75%", "end 40%"],
+  });
 
   return (
     <div className="experience" ref={ref}>
@@ -79,31 +119,17 @@ const Experience = () => {
 
       <motion.div
         className="expList"
+        ref={listRef}
         variants={listVariants}
         initial="initial"
         animate={isInView ? "animate" : "initial"}
       >
+        <div className="expTimeline" aria-hidden="true">
+          <div className="expTimelineTrack" />
+          <motion.div className="expTimelineFill" style={{ scaleY: scrollYProgress }} />
+        </div>
         {jobs.map((job) => (
-          <motion.article className="expItem" variants={itemVariants} key={job.id}>
-            <div className={`expLogo ${job.logoClass}`}>
-              <img src={job.logo} alt={job.logoAlt} />
-            </div>
-            <div className="expBody">
-              <div className="expHeading">
-                <h2 className="expCompany">
-                  {job.company}
-                  <span className="expRole">{job.role}</span>
-                </h2>
-                <p className="expDates">{job.dates}</p>
-              </div>
-              <p className="expDesc">{job.description}</p>
-              <ul className="expTags">
-                {job.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.article>
+          <JobItem job={job} key={job.id} />
         ))}
       </motion.div>
     </div>
