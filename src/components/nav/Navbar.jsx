@@ -132,51 +132,51 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-        </div>
 
-        <div className="navSocialWrap" ref={socialWrapRef}>
-          <button
-            type="button"
-            className={`navSocialToggle${socialsOpen ? " isOpen" : ""}`}
-            aria-expanded={socialsOpen}
-            aria-controls="follow-panel"
-            onClick={() => setSocialsOpen((open) => !open)}
-          >
-            <span className="srOnly">{socialsOpen ? "Close socials" : "Open socials"}</span>
-            <span className="navSocialBar" />
-            <span className="navSocialBar" />
-            <span className="navSocialBar" />
-          </button>
+          <div className="navSocialWrap" ref={socialWrapRef}>
+            <button
+              type="button"
+              className={`navSocialToggle${socialsOpen ? " isOpen" : ""}`}
+              aria-expanded={socialsOpen}
+              aria-controls="follow-panel"
+              onClick={() => setSocialsOpen((open) => !open)}
+            >
+              <span className="srOnly">{socialsOpen ? "Close socials" : "Open socials"}</span>
+              <span className="navSocialBar" />
+              <span className="navSocialBar" />
+              <span className="navSocialBar" />
+            </button>
 
-          <AnimatePresence>
-            {socialsOpen && (
-              <motion.div
-                id="follow-panel"
-                className="navFollowPanel"
-                initial={{ opacity: 0, y: -8, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -8, scale: 0.96 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <div className="navFollowIcons">
-                  {socials.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      className="navFollowLink"
-                      aria-label={social.label}
-                      data-tooltip={social.label}
-                      {...(social.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {socialsOpen && (
+                <motion.div
+                  id="follow-panel"
+                  className="navFollowPanel"
+                  initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <div className="navFollowIcons">
+                    {socials.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        className="navFollowLink"
+                        aria-label={social.label}
+                        data-tooltip={social.label}
+                        {...(social.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </nav>
     </motion.header>

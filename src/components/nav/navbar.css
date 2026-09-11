@@ -15,8 +15,7 @@
   width: min(1120px, 100%);
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 12px 8px 28px;
+  padding: 8px 16px;
   border-radius: 12px;
   background: #393736;
   border: 1px solid rgba(193, 173, 160, 0.28);
@@ -27,7 +26,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   min-width: 0;
 }
 
@@ -56,7 +55,10 @@
 
 .navSocialWrap {
   position: relative;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navSocialToggle {
@@ -106,13 +108,14 @@
 
 .navFollowPanel {
   position: absolute;
-  top: 100%;
-  right: -5px;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 52px;
+  width: 100%;
   padding: 0;
   overflow: hidden;
   background-color: #393736;
@@ -133,8 +136,8 @@
 
 .navFollowLink {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -150,8 +153,8 @@
 }
 
 .navFollowLink svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 }
 
 .navFollowLink::after {
@@ -191,14 +194,12 @@
 
 @media (max-width: 768px) {
   .siteNav {
-    padding: 10px 10px 0;
+    padding: 10px 12px 0;
   }
 
   .navPill {
-    gap: 4px;
-    padding: 6px 6px 6px 8px;
+    padding: 6px 10px;
   }
-
 
   .navLinks a {
     font-size: clamp(12px, 3vw, 14px);
@@ -207,7 +208,7 @@
   }
 
   .navSocialToggle {
-    width: 20px;
+    width: 36px;
     height: 36px;
     gap: 4px;
   }
@@ -226,7 +227,7 @@
   }
 
   .navFollowPanel {
-    right: -5px;
+    top: calc(100% + 6px);
   }
 
   .navFollowLink::after {
@@ -236,20 +237,15 @@
 
 @media (max-width: 480px) {
   .siteNav {
-    padding: 8px 8px 0;
+    padding: 8px 12px 0;
   }
 
   .navPill {
-    gap: 2px;
-    padding: 4px 4px 4px 6px;
+    padding: 4px 8px;
   }
 
   .navLinks a {
     font-size: clamp(11px, 3.1vw, 13px);
     padding: 8px clamp(3px, 1vw, 6px);
-  }
-
-  .navFollowPanel {
-    right: -5px;
   }
 }
