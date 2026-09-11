@@ -11,6 +11,7 @@ html { /*Snaps to next screen*/
     scroll-behavior: smooth;
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-padding-top: 88px;
 }
 
 body {

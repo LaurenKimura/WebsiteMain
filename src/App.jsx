@@ -3,10 +3,12 @@ import Video from "./components/video/Video";
 import Experience from "./components/experience/Experience";
 import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
+import Navbar from "./components/nav/Navbar";
 
 const App = () => {
   return (
     <>
+      <Navbar />
       <div className="container">
         <section id="home">
           <Hero />

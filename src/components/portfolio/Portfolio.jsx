@@ -123,7 +123,7 @@ const Portfolio = () => {
     const overlayOpacity = useTransform(leaveProgress, [0, 0.15], [1, 0]);
 
     return (
-        <div className = "portfolio" ref={ref} style={{ height: `${items.length * 100}vh` }}>
+        <div id="projects" className = "portfolio" ref={ref} style={{ height: `${items.length * 100}vh` }}>
             <motion.div className="pViewport" style={{ opacity: overlayOpacity }}>
                 <motion.div className="pList" style={{ x: xTranslate}}>
                     {items.map(item=>(
