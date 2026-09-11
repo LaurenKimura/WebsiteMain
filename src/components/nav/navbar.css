@@ -109,15 +109,16 @@
 .navFollowPanel {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
-  right: 0;
+  left: 50%;
+  right: auto;
+  margin-left: -28px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 100%;
+  width: 56px;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   background-color: #393736;
   border-bottom-right-radius: 10px;
   box-shadow: 0 12px 28px rgba(57, 55, 54, 0.22);
@@ -128,17 +129,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   height: auto;
-  padding: 12px 0 14px;
+  padding: 14px 0 16px;
   width: 100%;
 }
 
 .navFollowLink {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,8 +155,8 @@
 }
 
 .navFollowLink svg {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
 }
 
 .navFollowLink::after {
@@ -162,12 +164,14 @@
   position: absolute;
   right: 100%;
   top: 50%;
+  z-index: 3;
   transform: translateY(-50%);
-  margin-right: 10px;
+  margin-right: 8px;
   background-color: #393736;
-  color: white;
+  color: #e1dbd8;
   font-size: 12px;
-  padding: 6px 10px;
+  letter-spacing: 0.02em;
+  padding: 5px 8px;
   border-radius: 6px;
   white-space: nowrap;
   opacity: 0;
@@ -228,10 +232,29 @@
 
   .navFollowPanel {
     top: calc(100% + 6px);
+    width: 44px;
+    margin-left: -22px;
+  }
+
+  .navFollowIcons {
+    gap: 10px;
+    padding: 10px 0 12px;
+  }
+
+  .navFollowLink {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navFollowLink svg {
+    width: 24px;
+    height: 24px;
   }
 
   .navFollowLink::after {
-    display: none;
+    font-size: 11px;
+    padding: 4px 7px;
+    margin-right: 6px;
   }
 }
 
@@ -247,5 +270,20 @@
   .navLinks a {
     font-size: clamp(11px, 3.1vw, 13px);
     padding: 8px clamp(3px, 1vw, 6px);
+  }
+
+  .navFollowPanel {
+    width: 40px;
+    margin-left: -20px;
+  }
+
+  .navFollowLink {
+    width: 26px;
+    height: 26px;
+  }
+
+  .navFollowLink svg {
+    width: 22px;
+    height: 22px;
   }
 }
