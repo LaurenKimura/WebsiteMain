@@ -21,8 +21,8 @@ const links = [
   },
   {
     label: "Resume",
-    href: "/",
-    external: false,
+    href: "/resume.pdf",
+    external: true,
   },
 ];
 

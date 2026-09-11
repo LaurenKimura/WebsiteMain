@@ -9,7 +9,7 @@ const items = [
     title: "CardBot",
     desc: "There's always something to celebrate, but not everyone has time to make a sentimental card. CardBot solves this for both businesses producing cards at scale and individuals who want something personal, fast. It uses 3 omni wheels for movement, an Arduino Uno with an Adafruit Motor Shield (I2C) for motor control, quadrature Hall encoders for odometry, and a servo for pen lift/lower.",
 
-    link: "https://devpost.com/software/opendoor-obf9m7",
+    link: "https://www.linkedin.com/posts/lnk2029_as-we-wrap-up-this-winter-quarter-my-engineering-activity-7439948884296085504-vi-B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFwrXqABr19aCgJmsYczhFj6UbpOMgchcmw",
   },
   {
     id: 2,

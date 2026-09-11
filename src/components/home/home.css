@@ -1,6 +1,8 @@
 /*LEFT SECTION*/
 .hSection.left {
     flex:8;
+    justify-content: flex-start;
+    gap: 24px;
 }
 
 .home {
@@ -113,6 +115,7 @@
     object-fit: contain;
     background-color: #ffffff;
     border-radius: 100%;
+    border: 2px solid #A07B64;
     transition: transform 0.2s ease;
 }
 
@@ -166,11 +169,6 @@
     margin-top: 12px;
     text-align: center;
     font-size: 16px;
-}
-
-.scroll {
-    margin-bottom: 50px;
-    width: max-content;
 }
 
 /*RIGHT SECTION*/
@@ -441,10 +439,6 @@
   .awardList {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .scroll {
-    display: none;
   }
 
   .hSection.right {

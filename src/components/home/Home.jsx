@@ -112,7 +112,7 @@ const Home = () => {
                 className ="awards">
                 <motion.h2 variants={awardVariants}>Computer Science Engineer</motion.h2>
                 <motion.p variants={awardVariants}>Sophmore Student at Santa Clara University</motion.p>
-                <motion.p variants={awardVariants} className="hobbyLabel">beyond the code:</motion.p>
+                <motion.p variants={awardVariants} className="hobbyLabel">BEYOND THE CODE:</motion.p>
                 <motion.div variants={awardVariants} className="hobbyBox">
                     <div className="awardList"> 
                     {hobbies.map((hobby) => (
@@ -131,44 +131,6 @@ const Home = () => {
                     </div>
                 </motion.div>
             </motion.div>
-            {/*SCROLL SVG (google it, copied and pasted)*/}
-            <motion.a 
-                animate={{y: [0,5], opacity: [0,1,0]}} 
-                transition={{
-                    repeat: Infinity,
-                    duration: 4,
-                    ease: "easeInOut",
-                }}
-                href ="#experience"
-                className="scroll"
-            >
-                <svg
-                    width="50px"
-                    height="50px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M5 9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9Z"
-                        stroke="#393736"
-                        strokeWidth="1"
-                    />
-
-                    <motion.path
-                        animate={{ y: [0,5]}}
-                        transition = {{
-                            repeat: Infinity,
-                            duration: 4,
-                            ease: "easeInOut",
-                        }}
-                        d="M12 5V8"
-                        stroke="#393736"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                    />
-                </svg>
-            </motion.a>
         </div>
 
         <div className="hSection right">
@@ -184,7 +146,7 @@ const Home = () => {
                 <motion.a variants={followVariants} whileHover="hover" href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
                     <img src="/linkedin.png" alt=""/>
                 </motion.a>
-                <motion.a variants={followVariants} whileHover="hover" href="/" className="socialLink" data-tooltip="Resume">
+                <motion.a variants={followVariants} whileHover="hover" href="/resume.pdf" className="socialLink" data-tooltip="Resume">
                     <img src="/resume.png" alt=""/>
                 </motion.a>
                 <motion.div variants={followVariants} className= "followTextContainer">
