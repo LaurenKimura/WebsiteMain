@@ -60,27 +60,6 @@ const awardVariants = {
         
 };
 
-const followVariants = {
-    initial: {
-        x: -50,
-        opacity: 0,
-    },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 15,
-            staggerChildren: 0.2,
-        }
-    },
-    hover: {
-        y: -10,
-        transition: { type: "spring", stiffness: 300, damping: 10 }
-    },
-};
-
 const Home = () => {
     const [activeHobby, setActiveHobby] = useState(null);
 
@@ -136,26 +115,6 @@ const Home = () => {
         </div>
 
         <div className="hSection right">
-            {/*FOLLOW*/}
-            <motion.div variants={followVariants} 
-            initial="initial"
-            animate="animate"
-            className= "follow"
-            >
-                <motion.a  variants={followVariants}  whileHover="hover" href="https://github.com/LaurenKimura" className="socialLink" data-tooltip="GitHub">
-                    <img src="/github.png" alt=""/>
-                </motion.a>
-                <motion.a variants={followVariants} whileHover="hover" href="https://www.linkedin.com/in/lnk2029/" className="socialLink" data-tooltip="LinkedIn">
-                    <img src="/linkedin.png" alt=""/>
-                </motion.a>
-                <motion.a variants={followVariants} whileHover="hover" href="/resume.pdf" className="socialLink" data-tooltip="Resume">
-                    <img src="/resume.png" alt=""/>
-                </motion.a>
-                <motion.div variants={followVariants} className= "followTextContainer">
-                    <div className= "followText"> FOLLOW ME
-                    </div>
-                </motion.div>
-            </motion.div>
             {/* BUBBLE */}
             <Speech/>
             

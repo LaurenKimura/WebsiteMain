@@ -181,101 +181,8 @@
 .hSection.right{
     align-items: end;
     flex: 2;
+    padding-top: 88px;
 }
-
-.follow{
-    display:flex;
-    flex-direction:column;
-    gap: 12px;
-    padding: 15px;
-    margin-top: 72px;
-    background-color: #393736; 
-    border-bottom-right-radius: 10px;
-
-}
-
-.follow img {
-    width: 20px;
-    height: 20px;
-    
-}
-
-.followTextContainer {
-    width: 20px;
-    height: 20px;
-}
-
-.followText{
-    background-color: #bebab8;
-    font-size: 12px;
-    rotate: 90deg;
-    width: max-content;
-    height: 100%;
-    transform-origin: left top;
-    transform: translateY(-20px);
-    padding: 0 8px;
-    display: flex;
-    align-items: center;
-    border-bottom-right-radius: 10px;
-}
-
-.socialLink {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.socialLink::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 10px;
-    background-color: #393736;
-    color: white;
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-}
-
-.socialLink:hover::after {
-    opacity: 1;
-}
-/* 
-.bubbleContainer {
-    width: 50%;
-    display: flex;
-    gap: 8px;
-    justify-content: space-between;
-    align-items: end;
-}
-
-.bubble {
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    color: #555;
-    padding: 24px;
-    font-size: 18px;
-    border-radius: 20px 20px 0px 20px;
-}
-
-.bubbleContainer img {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    object-fit: cover;
-    background-color: red; 
-} */
-
-
-
 
 .certificate{
     width: 60%;
@@ -460,29 +367,9 @@
     z-index: 3;
   }
 
-  .follow {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    padding: 8px 18px;
-    gap: 8px;
-    margin-top: 0;
-  }
-
-  .followTextContainer,
   .bubbleContainer,
   .certificate,
   .contactLink {
-    display: none;
-  }
-
-  .socialLink {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .socialLink::after {
     display: none;
   }
 }
