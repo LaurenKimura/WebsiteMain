@@ -7,25 +7,25 @@ const jobs = [
     id: 1,
     company: "Association for Computing Machinery",
     role: "Workshop Coordinator",
-    dates: "Jun 2026 – Aug 2026",
+    dates: "Aug 2026 - Present",
     logo: "/acm.png",
     logoAlt: "ACM logo",
-    logoClass: "expLogoHyve",
     description:
-      "Built the AI test-coverage workflow (AnalAIze/GenerAIte/ValidAIte) and shipped RAG-grounded LLM features on a Flask + Neo4j + Azure OpenAI stack.",
-    tags: ["Flask", "Neo4j", "Azure OpenAI", "LangChain"],
+      " - Planned and organized 26 technical workshops with attendence around 25 people per meeting (650 total attendence). \n -Prepare workshop materials (slides, code, demos) and coordinate presenters or TAs",
+    technical: ["APIs", "Databases + SQL", "AWS", "Git/Github", "ML/AI", "React.js + React", "Native", "Firebase/Firestore", "Flutter/Mobile app dev", "Unity"],
+    soft: ["Event Planning", "Mentorship", "Public Speaking", "Coordination", "Leadership"],
   },
   {
     id: 2,
     company: "Association for Computing Machinery",
     role: "Marketing Coordinator",
-    dates: "Sep 2025 – Dec 2025",
+    dates: "Apr 2026 - Present",
     logo: "/acm.png",
     logoAlt: "ACM logo",
-    logoClass: "expLogoTrackfly",
     description:
-      "Shipped 15+ reusable React/TypeScript components from Figma in Next.js, with MySQL schemas and a Node.js email automation pipeline.",
-    tags: ["React", "TypeScript", "Next.js", "MySQL", "Node.js"],
+      "- Transformed ACM Instagram (@scu_acm) brand to a more professional appeal, boosting engagement from 20k to 50k average views per month. \n - Directed promotional campaigns for AWS x INTRIX and Hack for Humanity hackathons, driving consistent student turnout through strategic visual design.",
+    technical: ["Canva", "Adobe", "LinkedIn", "CapCut"],
+    soft: ["Leadership", "Campaign Direction/Partnerships", "Brand Growth/Strategy", "Communication", "Management"],
   },
 ];
 
@@ -66,7 +66,7 @@ const JobItem = ({ job }) => {
       ref={itemRef}
     >
       <span className={`expDot${isActive ? " isActive" : ""}`} aria-hidden="true" />
-      <div className={`expLogo ${job.logoClass}`}>
+      <div className="expLogo">
         <img src={job.logo} alt={job.logoAlt} />
       </div>
       <div className="expBody">
@@ -78,11 +78,28 @@ const JobItem = ({ job }) => {
           <p className="expDates">{job.dates}</p>
         </div>
         <p className="expDesc">{job.description}</p>
-        <ul className="expTags">
-          {job.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        <div className="expTagGroups">
+          {job.technical?.length > 0 && (
+            <div className="expTagGroup">
+              <h3 className="expTagLabel">Technical</h3>
+              <ul className="expTags">
+                {job.technical.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {job.soft?.length > 0 && (
+            <div className="expTagGroup">
+              <h3 className="expTagLabel">Soft Skills</h3>
+              <ul className="expTags">
+                {job.soft.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </motion.article>
   );
