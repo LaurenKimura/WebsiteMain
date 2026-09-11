@@ -111,10 +111,16 @@ const Portfolio = () => {
     const ref = useRef(null);
 
     useEffect(()=> {
-        if(ref.current){
-            const rect= ref.current.getBoundingClientRect();
-            setContainerDistance(rect.left);
-        }
+        const measure = () => {
+            if(ref.current){
+                const rect= ref.current.getBoundingClientRect();
+                setContainerDistance(rect.left);
+            }
+        };
+
+        measure();
+        window.addEventListener("resize", measure);
+        return () => window.removeEventListener("resize", measure);
     }, []);
 
     const {scrollYProgress} = useScroll({target:ref});
