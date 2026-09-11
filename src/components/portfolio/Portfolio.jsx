@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useRef } from "react";
 import "./portfolio.css";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 
@@ -107,40 +107,25 @@ const ListItem = ({item})=> {
 }
 
 const Portfolio = () => {
-    const [containerDistance, setContainerDistance] = useState(0);
     const ref = useRef(null);
 
-    useEffect(()=> {
-        const measure = () => {
-            if(ref.current){
-                const rect= ref.current.getBoundingClientRect();
-                setContainerDistance(rect.left);
-            }
-        };
-
-        measure();
-        window.addEventListener("resize", measure);
-        return () => window.removeEventListener("resize", measure);
-    }, []);
-
     const {scrollYProgress} = useScroll({target:ref});
+    const {scrollYProgress: leaveProgress} = useScroll({
+        target: ref,
+        offset: ["end end", "end start"],
+    });
 
     const xTranslate = useTransform(
         scrollYProgress, 
         [0,1], 
-        [0,-(window.innerWidth * items.length)])
+        [0,-(window.innerWidth * (items.length - 1))])
+
+    const overlayOpacity = useTransform(leaveProgress, [0, 0.15], [1, 0]);
 
     return (
-        <div className = "portfolio" ref={ref}>
-            <div className="pViewport">
+        <div className = "portfolio" ref={ref} style={{ height: `${items.length * 100}vh` }}>
+            <motion.div className="pViewport" style={{ opacity: overlayOpacity }}>
                 <motion.div className="pList" style={{ x: xTranslate}}>
-                    <div 
-                    className= "empty"
-                    style={{
-                        width: window.innerWidth - containerDistance, 
-                        backgroundColor: "#e1dbd8",
-                    }}
-                    />
                     {items.map(item=>(
                         <ListItem item ={item} key={item.id}/>
                     ))}
@@ -167,15 +152,10 @@ const Portfolio = () => {
                         />
                     </svg>
                 </div>
-            </div>
-            <section/>
-            <section/>
-            <section/>
-            <section/>
-            {/* <section/>
-            <section/> 
-            IF I ADD EXTRA PROJECTS UNSLASH THESE
-            */}
+            </motion.div>
+            {items.map((item) => (
+                <section key={`snap-${item.id}`} />
+            ))}
         </div>
     )
 }

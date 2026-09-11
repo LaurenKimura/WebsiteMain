@@ -6,6 +6,8 @@
   justify-content: center;
   padding: 48px 16px;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .contactInner {
@@ -84,10 +86,15 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 8px 4px;
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8a7e76;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .contactLinkArrow {

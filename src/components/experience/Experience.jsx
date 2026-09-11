@@ -127,10 +127,6 @@ const Experience = () => {
           <span className="expSubtitleMark" aria-hidden="true">
             ~
           </span>
-          <span className="expSubtitleArrow" aria-hidden="true">
-            →
-          </span>
-          my journey so far
         </p>
       </motion.div>
 

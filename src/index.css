@@ -49,6 +49,14 @@ section {
     scroll-snap-align: start;
 }
 
+#contact {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: #e1dbd8;
+    isolation: isolate;
+}
+
 section:nth-child(1) { /*Sets the color of the backgrund each section*/
     background-color: #e1dbd8;
 }

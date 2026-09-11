@@ -23,11 +23,11 @@ const App = () => {
 
       <Portfolio />
 
-      <div className="container">
-        <section id="contact">
+      <section id="contact">
+        <div className="container">
           <Contact />
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   )
 }

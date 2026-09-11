@@ -1,8 +1,4 @@
 .portfolio {
-    height: 400vh;
-    /* height: 600vh;
-    IF 5 LINKS = 600vh
-    */
     position: relative;
 }
 
@@ -12,7 +8,11 @@
     height: 100vh;
     width: 100vw;
     margin-left: calc(50% - 50vw);
+    margin-bottom: -100vh;
     overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #e1dbd8;
 }
 
 .pList {
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     gap: 100px;
-
+    pointer-events: auto;
 }
 
 .pItem:nth-child(1) {
