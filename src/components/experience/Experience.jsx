@@ -1,17 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import "./experience.css";
-import hyveLogo from "./hyve.svg";
-import trackflyLogo from "./trackfly.svg";
 
 const jobs = [
   {
     id: 1,
-    company: "Hyve Solutions",
+    company: "ACM Workshop Coordinator",
     role: "Software Engineer Intern",
     dates: "Jun 2026 – Aug 2026",
-    logo: hyveLogo,
-    logoAlt: "Hyve Solutions logo",
+    logo: "/acm.png",
+    logoAlt: "ACM logo",
     logoClass: "expLogoHyve",
     description:
       "Built the AI test-coverage workflow (AnalAIze/GenerAIte/ValidAIte) and shipped RAG-grounded LLM features on a Flask + Neo4j + Azure OpenAI stack.",
@@ -22,8 +20,8 @@ const jobs = [
     company: "TrackFly",
     role: "Software Engineer Intern",
     dates: "Sep 2025 – Dec 2025",
-    logo: trackflyLogo,
-    logoAlt: "TrackFly logo",
+    logo: "/acm.png",
+    logoAlt: "ACM logo",
     logoClass: "expLogoTrackfly",
     description:
       "Shipped 15+ reusable React/TypeScript components from Figma in Next.js, with MySQL schemas and a Node.js email automation pipeline.",
