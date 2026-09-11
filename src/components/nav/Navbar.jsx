@@ -158,22 +158,21 @@ const Navbar = () => {
                 exit={{ opacity: 0, y: -8, scale: 0.96 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="navFollowLink"
-                    aria-label={social.label}
-                    data-tooltip={social.label}
-                    {...(social.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-                <div className="navFollowTextWrap">
-                  <span className="navFollowText">FOLLOW ME</span>
+                <div className="navFollowIcons">
+                  {socials.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      className="navFollowLink"
+                      aria-label={social.label}
+                      data-tooltip={social.label}
+                      {...(social.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
                 </div>
               </motion.div>
             )}
