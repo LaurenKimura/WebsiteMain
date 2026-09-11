@@ -4,8 +4,8 @@ import "./navbar.css";
 
 const links = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 

@@ -46,11 +46,8 @@
 }
 
 .navLinks a.isActive {
-  color: #c1ada0;
-}
-
-.navLinks a.isActive::after {
-  content: " /";
+  color: #c1ad9f;
+  font-size: 18px;
 }
 
 .navSocialWrap {
