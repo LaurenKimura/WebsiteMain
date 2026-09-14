@@ -13,7 +13,7 @@ const Speech = () => {
                 <TypeAnimation
                     sequence={[
                         1000,
-                        'Swipe up/down for navigation',
+                        'Swipe up and down for navigation',
                         1000,
                     ]}
                     wrapper="span"

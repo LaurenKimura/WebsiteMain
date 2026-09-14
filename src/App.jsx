@@ -4,6 +4,7 @@ import Experience from "./components/experience/Experience";
 import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
 import Navbar from "./components/nav/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
           <Contact />
         </div>
       </section>
+
+      <Analytics />
     </>
   )
 }
