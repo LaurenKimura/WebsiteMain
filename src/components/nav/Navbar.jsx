@@ -1,30 +1,17 @@
-import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import "./navbar.css";
 
 const links = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
 const sectionOrder = ["home", "experience", "projects", "contact"];
 
 const socials = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/lnk2029/",
-    external: true,
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.5h4.56V23H.22V8.5zM8.34 8.5h4.37v1.98h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.9h-4.56v-7c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.69V23H8.34V8.5z"
-        />
-      </svg>
-    ),
-  },
   {
     label: "GitHub",
     href: "https://github.com/LaurenKimura",
@@ -39,12 +26,15 @@ const socials = [
     ),
   },
   {
-    label: "Email",
-    href: "mailto:Laurenkimura23@gmail.com",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/lnk2029/",
+    external: true,
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3.2" y="5.5" width="17.6" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M4 7.2 12 13.2 20 7.2" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+        <path
+          fill="currentColor"
+          d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.5h4.56V23H.22V8.5zM8.34 8.5h4.37v1.98h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.9h-4.56v-7c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.69V23H8.34V8.5z"
+        />
       </svg>
     ),
   },
@@ -69,7 +59,8 @@ const socials = [
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [socialsOpen, setSocialsOpen] = useState(false);
+  const socialWrapRef = useRef(null);
 
   useEffect(() => {
     const updateActive = () => {
@@ -97,16 +88,28 @@ const Navbar = () => {
 
   useEffect(() => {
     const onKeyDown = (event) => {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape") setSocialsOpen(false);
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  useEffect(() => {
+    if (!socialsOpen) return undefined;
+
+    const onPointerDown = (event) => {
+      if (!socialWrapRef.current?.contains(event.target)) {
+        setSocialsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [socialsOpen]);
+
   const handleNavClick = (id) => {
     setActive(id);
-    setMenuOpen(false);
   };
 
   return (
@@ -116,19 +119,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      <nav className={`navPill${menuOpen ? " isOpen" : ""}`} aria-label="Primary">
-        <button
-          type="button"
-          className="navToggle"
-          aria-expanded={menuOpen}
-          aria-controls="primary-nav-links"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="srOnly">{menuOpen ? "Close menu" : "Open menu"}</span>
-          <span className="navToggleBar" />
-          <span className="navToggleBar" />
-        </button>
-
+      <nav className="navPill" aria-label="Primary">
         <div id="primary-nav-links" className="navLinks">
           {links.map((link) => (
             <a
@@ -141,22 +132,51 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-        </div>
 
-        <div className="navSocials">
-          {socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              className="navSocial"
-              aria-label={social.label}
-              {...(social.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
+          <div className="navSocialWrap" ref={socialWrapRef}>
+            <button
+              type="button"
+              className={`navSocialToggle${socialsOpen ? " isOpen" : ""}`}
+              aria-expanded={socialsOpen}
+              aria-controls="follow-panel"
+              onClick={() => setSocialsOpen((open) => !open)}
             >
-              {social.icon}
-            </a>
-          ))}
+              <span className="srOnly">{socialsOpen ? "Close socials" : "Open socials"}</span>
+              <span className="navSocialBar" />
+              <span className="navSocialBar" />
+              <span className="navSocialBar" />
+            </button>
+
+            <AnimatePresence>
+              {socialsOpen && (
+                <motion.div
+                  id="follow-panel"
+                  className="navFollowPanel"
+                  initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <div className="navFollowIcons">
+                    {socials.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        className="navFollowLink"
+                        aria-label={social.label}
+                        data-tooltip={social.label}
+                        {...(social.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </nav>
     </motion.header>
